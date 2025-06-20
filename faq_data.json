@@ -1,0 +1,106 @@
+[
+    {
+        "question": "How to order a laptop?",
+        "answer": "Smartprocess"
+    },
+    {
+        "question": "How to order a monitor?",
+        "answer": "Monitors are no longer stocked by IS per Controlling instructions. Please order directly via eProc."
+    },
+    {
+        "question": "How to request a docking station (only for defects - limited to 1 per user)?",
+        "answer": "Universal Docking Station"
+    },
+    {
+        "question": "How to order a Kensington lock?",
+        "answer": "Accessories"
+    },
+    {
+        "question": "How to order a laptop bag?",
+        "answer": "Laptop Slim Topload Case"
+    },
+    {
+        "question": "How to order a mouse?",
+        "answer": "Submit a GLPI ticket under category: \"Peripherals > Replacement\""
+    },
+    {
+        "question": "How to order a USB keyboard?",
+        "answer": "Submit a GLPI ticket under category: \"Peripherals > Replacement\""
+    },
+    {
+        "question": "How to order speakers?",
+        "answer": "eProc - Lenovo Punch Out Catalogue"
+    },
+    {
+        "question": "How to order a USB headset?",
+        "answer": "eProc - Lenovo Punch Out Catalogue"
+    },
+    {
+        "question": "How to request a desk phone?",
+        "answer": "Use SmartProcess \"IS/IT End User Requests\" and select job \"Providing telephone DECT\""
+    },
+    {
+        "question": "How to request an SSO SmartCard?",
+        "answer": "SSO Card Order Process"
+    },
+    {
+        "question": "How to request server creation?",
+        "answer": "First create a GLPI ticket"
+    },
+    {
+        "question": "How to order a company smartphone?",
+        "answer": "Only A and S-models are provided (S-models for upper management).\n\n1. Select \"IS/IT End User Requests (ITRR)\"\n2. Create a new request\n3. Choose \"Mobile Devices\" and select your model\n\nNote: A GLPI ticket is automatically generated for tracking."
+    },
+    {
+        "question": "How to add a roaming package to a company phone?",
+        "answer": "Submit a request for \"Add Data/Call Roaming Package to Company Cell Line\" via FRI1"
+    },
+    {
+        "question": "How to request remote access (Ivanti Secure Access)?",
+        "answer": "Ivanti Secure Access (formerly Pulse Secure)\n\nAfter approval, enroll your browser for access.\nOptions: Internal User or External User"
+    },
+    {
+        "question": "How to request an AD/Google/Email account?",
+        "answer": "Contact the HR department"
+    },
+    {
+        "question": "How to create an email group?",
+        "answer": "Submit a GLPI ticket"
+    },
+    {
+        "question": "How to request eProc access?",
+        "answer": "1. Go to \"IS/IT End User Requests (ITRR)\"\n2. Select \"Application Access\"\n3. Choose your role: Requestor, Buyer, Management, Local Administrator, or Budget Manager"
+    },
+    {
+        "question": "How to request iTAC access?",
+        "answer": "Submit a GLPI ticket after completing basic iTAC training"
+    },
+    {
+        "question": "How to request SAP (System P09) access?",
+        "answer": "1. Go to \"IS/IT End User Requests (ITRR)\"\n2. Create a new request\n3. Select \"SAP Applications > SAP Access Request\""
+    },
+    {
+        "question": "How to unlock a SAP account?",
+        "answer": "1. Go to \"IS/IT End User Requests (ITRR)\"\n2. Create a new request\n3. Select \"SAP Applications > Unlock my SAP Account\""
+    },
+    {
+        "question": "How to request Microsoft Teams/SharePoint access?",
+        "answer": "Visit: https://my.apps4u.valeo.com/portal/valeo/"
+    },
+    {
+        "question": "How to request software from the catalog?",
+        "answer": "Submit a SmartProcess request"
+    },
+    {
+        "question": "How to request firewall protocol exceptions (SSH/RDP)?",
+        "answer": "Submit a GLPI ticket"
+    },
+    {
+        "question": "How to request MS Office access?",
+        "answer": "1. Go to \"IS/IT End User Requests (ITRR)\"\n2. Create a new request\n3. Select \"MS Office\" and follow the rules in column D"
+    },
+    {
+        "question": "How to request a Google Shared Drive?",
+        "answer": "Use the provided Request Form link"
+    }
+]
