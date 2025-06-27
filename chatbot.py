@@ -4,11 +4,12 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
+import os
 
 # Configuration
 GREETINGS = ["hi", "hello", "hey", "good morning", "good afternoon", "greetings"]
-DEFAULT_RESPONSE = "I'm sorry, I don't have information about that. Please ask another question."
-MIN_CONFIDENCE = 0.2  # Minimum similarity score to consider a match
+DEFAULT_RESPONSE = "I'm sorry, I don't have an answer to that question yet. Your question has been saved so I can learn and improve. Please feel free to ask another question!"
+MIN_CONFIDENCE = 0.3  # Minimum similarity score to consider a match
 
 # Load FAQ data
 with open("faq_data.json", "r", encoding="utf-8") as file:
@@ -31,6 +32,23 @@ index.add(np.array(question_embeddings_normalized, dtype=np.float32))
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 CORS(app)
+
+def save_unanswered_question(question):
+    file_path = "unanswered_questions.json"
+    data = []
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                content = f.read().strip()
+                if content:  
+                    data = json.loads(content)
+        except (json.JSONDecodeError, IOError):
+            data = []
+    if question not in data:
+        data.append(question)
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
 
 def find_best_answers(query, top_k=5, margin=0.1):
     """Find matching questions with confidence threshold"""
@@ -96,6 +114,8 @@ def ask():
     candidates = find_best_answers(user_query)
     
     if not candidates:
+        print(f"No match found for: {user_query}") # for debugging
+        save_unanswered_question(user_query)
         conversation_history.append({"question": user_query, "answer": DEFAULT_RESPONSE})
         session["conversation_history"] = conversation_history
         return jsonify({"answer": DEFAULT_RESPONSE})
