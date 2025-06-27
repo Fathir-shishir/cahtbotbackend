@@ -8,7 +8,7 @@ from flask_cors import CORS
 # Configuration
 GREETINGS = ["hi", "hello", "hey", "good morning", "good afternoon", "greetings"]
 DEFAULT_RESPONSE = "I'm sorry, I don't have information about that. Please ask another question."
-MIN_CONFIDENCE = 0.3  # Minimum similarity score to consider a match
+MIN_CONFIDENCE = 0.2  # Minimum similarity score to consider a match
 
 # Load FAQ data
 with open("faq_data.json", "r", encoding="utf-8") as file:
@@ -115,8 +115,8 @@ def ask():
     } for i, (idx, _) in enumerate(candidates)]
 
     session["pending_options"] = options
-    options_text = "\n".join([f"{opt['number']}. {opt['question']}" for opt in options])
-    response_text = f"Multiple matches found. Please select by number:\n{options_text}"
+    options_text = "<br>".join([f"{opt['number']}. {opt['question']}" for opt in options])
+    response_text = f"Multiple matches found. Please select by number:<br>{options_text}"
     
     conversation_history.append({"question": user_query, "answer": response_text})
     session["conversation_history"] = conversation_history
