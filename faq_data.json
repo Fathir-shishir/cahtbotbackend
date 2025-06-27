@@ -104,35 +104,6 @@
         "answer": "Use the provided Request Form link"
     },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {
-        "question": "How to make pasta?",
-        "answer": "Ask chef Mimo via this <a href=\"https://www.netlify.com/\" target=\"_blank\">link</a>.<br/><i>Note : </i>"
-    },
     {
         "question": "How to have access to BARFLOW - Admin?",
         "answer": "Please follow the link provided <a href=\"https://eu.appsheet.com/start/496e80db-2175-4081-af05-52cb8491a4d3?platform=desktop#appName=cp2320-eu-sql-6095245&vss=H4sIAAAAAAAAA6WUa2-bMBiF_4rlz5ABSQjwZcqWpYvWi5RmrdQxRY79slkDzLBJi6L899q5tWqSNhe--fCew-GxYYanHB5vFaH_cPRr9rL6ATWO8CzGo7qAGEcx_ipyVYo0xlaMr0m2FL-LDMaXXKoYz_HcOj6gKyUoeVYEMRHjblGknBLFRd6lFKQ8Ne6qRkP4X4HUtfqizBY5v611jgKJo9mRZKIzyVqYM8gVTziUJsxYdcjKqG8bmxY2Jv3mOKsUmaSw6KxNcy0dux0n9H6TcGjzV7Yd3dfzO4YtPBRCaZGSkulVjyiibVmhJc_x2rbj215r5LpRy4lanUbY8XzHDR7wQTzeOVsnsHkn7VBOeyI-ZrbPeBC_9sgJIs-Nms2GH4ZeEPoH8tv1MZ0AblfMocTeej9GteXYMEqWq_2MmkHkdhqdMHwwY5CQKlV3JK2WPw1ZTVYtX-0D2myEhBSokfTAl-6wf3lzj2zUZRnPzd0qy0hpcF3DI9oOQOWyM_qEbvK0fvFRsQJT6Zes18qilZYvoMxIvpALoJom7XNImbyoNN6U56Y5vv9bIyZQLSqUAzCkBJrA8gmft5x6Xmu6G0nFn5-cmbNVuJ4b2Aym9pO57AljLHEnrjHXUkHWA0V4uvLeQjnlFMaDnlnr_eJykH9jXF0JpjursgILq5Lkkix4DcwzEp-2XA8S2_ddZreCNtgB9ZntsbDtsyAM24GjD61OSwStJLA7fQjP_2pNs6eC5GzZLSGphPkzG6goE1cHAAA=&view=asset_ApplicationAccess/\" target=\"_blank\">link</a>"
@@ -621,7 +592,7 @@
     },
     {
         "question": "How to request Entreprise architect license?",
-        "answer": "HEYYYYY"
+        "answer": "Visit the link provided <a href=\"https://eu.appsheet.com/start/496e80db-2175-4081-af05-52cb8491a4d3?platform=desktop#appName=cp2320-eu-sql-6095245&vss=H4sIAAAAAAAAA9WV_27aMBDHX8WytIlKSZZQSCH_obEfaN06lbaTNqbKJBdmzbEz22mLENKeZg-2J9k5QIcY0yj8Uc3_EJ99X-4-9p1n9IbD7dCy9CtNPs1-z97AlCZ0NqIX0xJGNBnR50parcSIeiP6jhUL42tVwPUpN3ZE53TuPVygZwxYc5AEcxLX5_3hYLivxNspOYdvFRgM5aXSRa3z2VvpWDA0mT2QRnIgTY_yDKTlOQftxJwriiwdcdm5oeHeCTOnRWXZWEAdMzrN0fTQI9gj7g2FXSNfc9sS-2r_ls0ePVfKojFlOsNZn1mGbkWJpmbYbPth7DfjiyhKWsdJuxu022HYaX6kO-HYuE574NhQ2BXHmtu_caxv3gnHyUUUIoskioJu3N2Rxba62APINpldqWz6_hvNHx73fPLF7G988K50kmYchJ34o9sGOauEvWKiWtS_qcbLKM-f9olDT3plKXjKLFfSoIsBAamb4J4X0oIuNTdAejr9wi2uuC1VUTDtsL2DW7JViOhF-OQZOeUpSFRYWVRO_qabqiXACmFMV5Y6ejS_Al0wWZtLSJF6-pKDyMyrCo9BcOkypO8rS7gk9guQsbojYxDq1qunuRL4zeUE1x3FOtCE_NdjJH1ygblZPFMHVixZN54rXSqNd8u7FJYX7mM4NRYKAnKCqEA7EC8y7iB4QRAcPXYqhw0H4qx0yTCR1EhK0MjCskkNpjL1D1sR8kgUPvFIM3xCfn7_ETx2-IeN1S24AW2QQF1hPbzlxjIhIHvs8A4bLrlBTjiWtcHzk9hxlpnVBUwamKpUljChgWXT32kfEW_RJ6Z1-WdguEYYS0h_dBHsHWjD9sWEmlzyzL1FZdSMOv7S5rfGcasTR7FzrWupD5Zx4TyHa390NiSNUy6ru2cfuMzUrTkiTGbOvDqfBgSTgOBqFB2h2BD0Dd7K60HfxYBvAzcD6Urzrcqw71ldgUetZtKwujEPXGzN9OSkG7Lcj7vx2G_FHfDH407bh3aXtePj41bWYfhAolquUrz92RU-ePu9_C6auxJzWMSTM2Fg_gtbuvkPdgsAAA==&view=asset_RDSIS/\" target=\"_blank\">link</a>."
     },
     {
         "question": "How to request Matlab license?",
