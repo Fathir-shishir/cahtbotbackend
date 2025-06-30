@@ -7,7 +7,7 @@ from flask_cors import CORS
 import os
 
 # Configuration
-GREETINGS = ["hi", "hello", "hey", "good morning", "good afternoon", "greetings"]
+GREETINGS = ["hi", "hello", "hey", "good morning", "good afternoon", "greetings", "Salam"]
 DEFAULT_RESPONSE = "I'm sorry, I don't have an answer to that question yet. Your question has been saved so I can learn and improve. Please feel free to ask another question!"
 MIN_CONFIDENCE = 0.3  # Minimum similarity score to consider a match
 
