@@ -7,7 +7,7 @@ from flask_cors import CORS
 import os
 
 # Configuration
-GREETINGS = ["hi", "hello", "hey", "good morning", "good afternoon", "greetings"]
+GREETINGS = ["hi", "hello", "hey", "good morning", "good afternoon", "greetings", "Salam"]
 DEFAULT_RESPONSE = "I'm sorry, I don't have an answer to that question yet. Your question has been saved so I can learn and improve. Please feel free to ask another question!"
 MIN_CONFIDENCE = 0.3  # Minimum similarity score to consider a match
 
@@ -31,7 +31,8 @@ index.add(np.array(question_embeddings_normalized, dtype=np.float32))
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
-CORS(app)
+
+CORS(app, supports_credentials=True, origins=["http://localhost:3000", "http://127.0.0.1:3000"])
 
 def save_unanswered_question(question):
     file_path = "unanswered_questions.json"
@@ -73,9 +74,31 @@ def find_best_answers(query, top_k=5, margin=0.1):
     
     return candidates
 
+# Debug endpoint to check session
+@app.route("/debug", methods=["GET"])
+def debug():
+    session_id = request.cookies.get('session')
+    return jsonify({
+        "session_id": session_id,
+        "session_data": dict(session),
+        "has_pending_options": "pending_options" in session,
+        "pending_options_count": len(session.get("pending_options", [])),
+        "conversation_history_count": len(session.get("conversation_history", []))
+    })
+
 @app.route("/ask", methods=["POST"])
 def ask():
     user_query = request.json.get("query", "").strip().lower()
+    
+    # Debug: Print session info
+    print(f"=== DEBUG INFO ===")
+    print(f"Query: {user_query}")
+    print(f"Session ID: {request.cookies.get('session')}")
+    print(f"Session keys: {list(session.keys())}")
+    print(f"Has pending_options: {'pending_options' in session}")
+    if "pending_options" in session:
+        print(f"Pending options count: {len(session['pending_options'])}")
+    print(f"==================")
 
     if not user_query:
         return jsonify({"error": "Query cannot be empty"}), 400
@@ -94,16 +117,22 @@ def ask():
         try:
             selected_num = int(user_query)
             pending_options = session["pending_options"]
+            print(f"Debug: Selected number: {selected_num}, Available options: {len(pending_options)}")
             if 1 <= selected_num <= len(pending_options):
                 selected_idx = pending_options[selected_num - 1]["index"]
+                print(f"Debug: Selected index: {selected_idx}")
                 answer = faq_data[selected_idx]["answer"]
-                conversation_history.append({"question": user_query, "answer": answer})
+                conversation_history.append({"question": f"Selected option {selected_num}", "answer": answer})
+                session["conversation_history"] = conversation_history
                 session.pop("pending_options")
                 return jsonify({"answer": answer})
-            session.pop("pending_options")
-            return jsonify({"answer": "Invalid selection. Please try again."})
+            else:
+                session.pop("pending_options")
+                return jsonify({"answer": "Invalid selection. Please try again."})
         except ValueError:
+            # If it's not a number, treat it as a new query
             session.pop("pending_options")
+            print(f"Debug: Not a number, treating as new query: {user_query}")
 
     # Context handling
     if conversation_history and ("that" in user_query or "more" in user_query):
@@ -114,7 +143,7 @@ def ask():
     candidates = find_best_answers(user_query)
     
     if not candidates:
-        print(f"No match found for: {user_query}") # for debugging
+        print(f"No match found for: {user_query}")
         save_unanswered_question(user_query)
         conversation_history.append({"question": user_query, "answer": DEFAULT_RESPONSE})
         session["conversation_history"] = conversation_history
@@ -135,6 +164,9 @@ def ask():
     } for i, (idx, _) in enumerate(candidates)]
 
     session["pending_options"] = options
+    session["conversation_history"] = conversation_history
+    print(f"Debug: Stored {len(options)} options in session")
+    
     options_text = "<br>".join([f"{opt['number']}. {opt['question']}" for opt in options])
     response_text = f"Multiple matches found. Please select by number:<br>{options_text}"
     
